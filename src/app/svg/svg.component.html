@@ -1,0 +1,38 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" height="600" width="400" xml:space="preserve" id="svg"
+version="1.1">
+  <defs id="defs6">
+    <clipPath id="clipPath18" clipPathUnits="userSpaceOnUse">
+      <path id="path16" d="M 0,450 H 300 V 0 H 0 Z" />
+    </clipPath>
+  </defs>
+  <g transform="matrix(1.3333333,0,0,-1.3333333,0,600)" id="peru">
+    <g id="g12">
+      <g clip-path="url(#clipPath18)" id="departments">
+        <svg:g
+          [attr.transform]="department.transform"
+          [id]="department.id"
+
+          (click)="onPathClick(department.id)"
+          (mouseover)="onPathOver(department.title)"
+          (mousemove)="onMouseMove($event)"
+          (mouseout)="onPathOut()"
+
+          class="deparment"
+
+          *ngFor="let department of departments">
+
+            <path app-path
+              [department]="department"
+              [id]="department.id"
+              [title]="department.title"
+              [attr.d]="department.data">
+            </path>
+
+        </svg:g>
+      </g>
+    </g>
+  </g>
+</svg>
+<div class="tooltip"> {{overlabel}} </div>
