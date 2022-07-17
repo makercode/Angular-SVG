@@ -13,18 +13,20 @@ import * as d3 from 'd3';
 
 export class SvgComponent implements OnInit {
   overlabel: string = "deparment";
-  departments: DepartmentInterface[] = [
-    {
-      id: "",
-      title: "",
-      transform: "",
-      data: ""
-    }
-  ];
-  mouseX: number=0;
-  mouseY: number=0;
+  departments: DepartmentInterface[];
+  mouseX: number= 0;
+  mouseY: number= 0;
 
   constructor( private departmentService: DepartmentService ) {
+    this.departments = [
+      {
+        id: "",
+        title: "",
+        transform: "",
+        data: "",
+        selected: false
+      }
+    ];
   }
 
   ngOnInit(): void {
@@ -48,15 +50,19 @@ export class SvgComponent implements OnInit {
 
 
   onMouseMove: { (event: MouseEvent): void } = (event: MouseEvent) => {
-    console.log(event.screenX);
-    console.log(event.screenY);
+    // console.log('onPathMove!');
+    // console.log(event.screenX);
+    // console.log(event.screenY);
     this.mouseX = event.x;
     this.mouseY = event.y;
     d3.select('.tooltip').style('top', ( this.mouseY+10 ) + 'px').style('left',(this.mouseX+10) + 'px');
-    console.log('onPathMove!');
   }
 
   onPathClick( departmentId:string ) {
+    this.departmentService.toggleSelectedDistrict(departmentId).then( ( departments: DepartmentInterface[] ) => {
+      this.departments = departments;
+      console.log(this.departments);
+    });
     console.log('onPathClick!');
   }
 

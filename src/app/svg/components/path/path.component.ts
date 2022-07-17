@@ -7,7 +7,6 @@ import { Component, OnInit, Input, Inject } from '@angular/core';
   styleUrls: ['./path.component.css']
 })
 export class PathComponent implements OnInit {
-  activeDepartment: string = '';
 
   constructor() { }
 
@@ -16,6 +15,7 @@ export class PathComponent implements OnInit {
     title: "",
     transform: "",
     data: "",
+    selected: false
   };
 
   ngOnInit(): void {

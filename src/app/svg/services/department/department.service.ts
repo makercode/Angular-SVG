@@ -1,23 +1,33 @@
 import { DepartmentInterface } from '../../interfaces/department.interface';
 import { Injectable } from '@angular/core';
-import departments from '../../assets/jsons/department.data.json';
+import departmentsJson from '../../assets/jsons/department.data.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepartmentService {
 
-  private departments: DepartmentInterface[] = departments;
+  private departments: DepartmentInterface[] = departmentsJson;
+  private departmentSelect: boolean = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   getDistricts(): Promise<DepartmentInterface[]> {
-    // Function to get districts - necessary
     return Promise.resolve(this.departments);
   }
-  /*
-  getDistrict(id:string): Promise<DistrictInterface> {
-    // Function to get district - not necessary
-  }*/
+  toggleSelectedDistrict(departmentId:string) {
+    console.log("toggleSelectedDistrict");
+
+    this.departmentSelect = this.departments.find(item => item.id === departmentId)?.selected!;
+
+    const departmentIndex:number = this.departments.findIndex(department => {
+      return department.id === departmentId;
+    });
+
+    this.departments[departmentIndex].selected = !this.departmentSelect;
+    console.log(this.departmentSelect);
+    return Promise.resolve(this.departments);
+  }
 
 }

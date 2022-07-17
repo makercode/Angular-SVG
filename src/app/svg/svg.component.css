@@ -19,6 +19,9 @@ path {
   stroke-dasharray:none;
   stroke-opacity:1
 }
+path.selected {
+  fill: #333333;
+}
 path:hover {
   fill:#666666;
 }
