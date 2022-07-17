@@ -16,7 +16,7 @@ export class DepartmentService {
   getDistricts(): Promise<DepartmentInterface[]> {
     return Promise.resolve(this.departments);
   }
-  toggleSelectedDistrict(departmentId:string) {
+  toggleSelectedDistrict(departmentId:string): Promise<DepartmentInterface[]> {
     console.log("toggleSelectedDistrict");
 
     this.departmentSelect = this.departments.find(item => item.id === departmentId)?.selected!;
