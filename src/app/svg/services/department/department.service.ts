@@ -1,5 +1,7 @@
-import { DepartmentInterface } from '../../interfaces/department.interface';
 import { Injectable } from '@angular/core';
+
+import { DepartmentHelper } from './../../helpers/department.helper';
+import { DepartmentInterface } from '../../interfaces/department.interface';
 import departmentsJson from '../../assets/jsons/department.data.json';
 
 @Injectable({
@@ -8,25 +10,25 @@ import departmentsJson from '../../assets/jsons/department.data.json';
 export class DepartmentService {
 
   private departments: DepartmentInterface[] = departmentsJson;
-  private departmentSelect: boolean = false;
+  private departmentIsSelectedValue: boolean = false;
+  private departmentIndex: number = 0;
 
-  constructor() {
+  constructor( private departmentHelper: DepartmentHelper ) {
   }
 
   getDistricts(): Promise<DepartmentInterface[]> {
     return Promise.resolve(this.departments);
   }
+
   toggleSelectedDistrict(departmentId:string): Promise<DepartmentInterface[]> {
     console.log("toggleSelectedDistrict");
+    let dhelper = this.departmentHelper;
 
-    this.departmentSelect = this.departments.find(item => item.id === departmentId)?.selected!;
+    this.departmentIsSelectedValue  = dhelper.getDepartmentIsSelectedValue( this.departments, departmentId);
+    this.departmentIndex            = dhelper.getDepartmentIndexById( this.departments, departmentId);
 
-    const departmentIndex:number = this.departments.findIndex(department => {
-      return department.id === departmentId;
-    });
+    this.departments[this.departmentIndex].selected  = !this.departmentIsSelectedValue;
 
-    this.departments[departmentIndex].selected = !this.departmentSelect;
-    console.log(this.departmentSelect);
     return Promise.resolve(this.departments);
   }
 
