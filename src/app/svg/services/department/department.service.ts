@@ -17,6 +17,7 @@ export class DepartmentService {
   }
 
   getDistricts(): Promise<DepartmentInterface[]> {
+    console.log("getDistricts");
     return Promise.resolve(this.departments);
   }
 
