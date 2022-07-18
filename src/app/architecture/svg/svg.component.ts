@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DepartmentInterface } from './interfaces/department.interface';
-import { DepartmentService } from './services/department/department.service';
+import { DepartmentInterface } from '../../business/department/interfaces/department.interface';
+import { DepartmentService } from '../../business/department/services/department.service';
 
 import * as d3 from 'd3';
 

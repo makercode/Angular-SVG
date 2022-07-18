@@ -1,4 +1,4 @@
-import { DepartmentInterface } from './../../interfaces/department.interface';
+import { DepartmentInterface } from '../../../../business/department/interfaces/department.interface';
 import { Component, OnInit, Input, Inject } from '@angular/core';
 
 @Component({

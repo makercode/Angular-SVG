@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { DepartmentHelper } from './../../helpers/department.helper';
-import { DepartmentInterface } from '../../interfaces/department.interface';
-import departmentsJson from '../../assets/jsons/department.data.json';
+import { DepartmentHelper } from './../helpers/department.helper';
+import { DepartmentInterface } from '../interfaces/department.interface';
+import departmentsJson from '../assets/jsons/department.data.json';
 
 @Injectable({
   providedIn: 'root'
