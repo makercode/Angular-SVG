@@ -50,7 +50,7 @@ export class SvgComponent implements OnInit {
 
 
   onMouseMove: { (event: MouseEvent): void } = (event: MouseEvent) => {
-    // console.log('onPathMove!');
+    console.log('onPathMove!');
     // console.log(event.screenX);
     // console.log(event.screenY);
     this.mouseX = event.x;
