@@ -9,13 +9,15 @@ import { TodoistComponent } from './architecture/todoist/todoist.component';
 import { TodoComponent } from './architecture/todoist/components/todo/todo.component'
 
 import { DepartmentService } from './business/department/services/department.service';
+import { HomeComponent } from './pages/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     SvgComponent,
     PathComponent,
     TodoistComponent,
-    TodoComponent
+    TodoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
