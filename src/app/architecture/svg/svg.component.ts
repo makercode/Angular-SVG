@@ -18,6 +18,7 @@ export class SvgComponent implements OnInit {
   mouseY: number= 0;
 
   constructor( private departmentService: DepartmentService ) {
+
     this.departments = [
       {
         id: "",
@@ -27,43 +28,55 @@ export class SvgComponent implements OnInit {
         selected: false
       }
     ];
+
   }
 
-  ngOnInit(): void {
-    this.departmentService.getDistricts().then( ( departments: DepartmentInterface[] ) => {
-      this.departments = departments;
-      console.log(this.departments);
-    });
+  ngOnInit(): (void) {
+
+    this.observeDepartments();
+
   }
 
+  observeDepartments(): (void)  {
 
-  onPathOver( title:string ) {
-    this.overlabel = title;
+    console.log('observeDepartments!');
+    this.departmentService.getDepartments().subscribe(
+      ( resultDepartments:DepartmentInterface[] ) => {
+        this.departments = resultDepartments;
+        console.log( resultDepartments );
+      }
+    )
+
+  }
+
+  onPathOver( title:string ): (void)  {
+
     console.log('onPathOver!');
+    this.overlabel = title;
+
   }
 
-  onPathOut() {
+  onPathOut(): (void)  {
+
     console.log('onPathOut!');
     d3.select('.tooltip').style('left','-300px');
-    console.log('onPathOut!');
+
   }
 
+  onPathMouseMove ( event: MouseEvent ): (void) {
 
-  onPathMouseMove: { (event: MouseEvent): void } = (event: MouseEvent) => {
     console.log('onPathMove!');
-    // console.log(event.screenX);
-    // console.log(event.screenY);
     this.mouseX = event.x;
     this.mouseY = event.y;
     d3.select('.tooltip').style('top', ( this.mouseY+10 ) + 'px').style('left',(this.mouseX+10) + 'px');
+
   }
 
-  onPathClick( departmentId:string ) {
-    this.departmentService.toggleSelectedDistrict(departmentId).then( ( departments: DepartmentInterface[] ) => {
-      this.departments = departments;
-      console.log(this.departments);
-    });
+  onPathClick( departmentId:string ): (void)  {
+
     console.log('onPathClick!');
+    this.departmentService.toggleSelectedDepartment(departmentId);
+
   }
 
 }
