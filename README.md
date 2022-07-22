@@ -1,2 +1,2 @@
 # Angular-SVG
-CLEAN CODE Angular SVG selector with, D3.
+CLEAN CODE Angular SVG selector with D3 and RXJS.
