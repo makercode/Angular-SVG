@@ -1,1 +1,16 @@
-<p>todoist works!</p>
+<ul>
+
+  <li
+  [attr.transform]="department.transform"
+  [id]="department.id"
+  (click)="onItemClick(department.id)"
+
+  class="deparment"
+  *ngFor="let department of departments">
+
+    <app-todo [department]="department">
+    </app-todo>
+
+  </li>
+
+</ul>
