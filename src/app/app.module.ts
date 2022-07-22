@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 // Main components
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 
 // Secondary components
-import { AppComponent } from './app.component';
 import { SvgComponent } from './components/svg/svg.component';
 import { PathComponent } from './components/svg/components/path/path.component';
 import { TodoistComponent } from './components/todoist/todoist.component';
