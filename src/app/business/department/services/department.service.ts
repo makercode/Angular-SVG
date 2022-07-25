@@ -34,19 +34,42 @@ export class DepartmentService {
 
   }
 
-  toggleSelectedDepartment(departmentId:string): Subject<DepartmentInterface[]> {
+  toggleSelectedDepartment( departmentId:string ): Subject<DepartmentInterface[]> {
 
     console.log("toggleSelectedDepartment");
     let dhelper = this.departmentHelper;
 
     this.departmentIsSelectedValue  = dhelper.getDepartmentIsSelectedValue( this.departments, departmentId);
     this.departmentIndex            = dhelper.getDepartmentIndexById( this.departments, departmentId);
-
     this.departments[this.departmentIndex].selected  = !this.departmentIsSelectedValue;
-
     this.departmentObserver.next(this.departments);
+
     return this.departmentObserver;
 
+  }
+
+  activeOveredDepartment( departmentId:string ): Subject<DepartmentInterface[]> {
+
+    console.log("activeOveredDepartment");
+    let dhelper = this.departmentHelper;
+
+    this.departmentIndex            = dhelper.getDepartmentIndexById( this.departments, departmentId);
+    this.departments[this.departmentIndex].overed  = true;
+    this.departmentObserver.next(this.departments);
+
+    return this.departmentObserver;
+  }
+
+  inactiveOveredDepartment( departmentId:string ): Subject<DepartmentInterface[]> {
+
+    console.log("inactiveOveredDepartment");
+    let dhelper = this.departmentHelper;
+
+    this.departmentIndex            = dhelper.getDepartmentIndexById( this.departments, departmentId);
+    this.departments[this.departmentIndex].overed  = false;
+    this.departmentObserver.next(this.departments);
+
+    return this.departmentObserver;
   }
 
 }

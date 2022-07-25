@@ -15,9 +15,9 @@ version="1.1">
           [id]="department.id"
 
           (click)="onPathClick(department.id)"
-          (mouseover)="onPathOver(department.title)"
+          (mouseover)="onPathOver(department.title,department.id)"
           (mousemove)="onPathMouseMove($event)"
-          (mouseout)="onPathOut()"
+          (mouseout)="onPathOut(department.id)"
 
           class="deparment"
 
@@ -28,6 +28,7 @@ version="1.1">
               [id]="department.id"
               [title]="department.title"
               [class.selected]="department.selected"
+              [class.overed]="department.overed"
               [attr.d]="department.data">
             </path>
 

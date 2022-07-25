@@ -8,13 +8,7 @@ import { DepartmentInterface } from '../../../../business/department/interfaces/
 })
 export class TodoComponent implements OnInit {
 
-  @Input() department: DepartmentInterface = {
-    id: "",
-    title: "",
-    transform: "",
-    data: "",
-    selected: false
-  };
+  @Input() department!: DepartmentInterface;
 
   constructor() { }
 

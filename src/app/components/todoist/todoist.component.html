@@ -3,7 +3,9 @@
   <li
   [attr.transform]="department.transform"
   [id]="department.id"
-  (click)="onItemClick(department.id)"
+  (click)="onTodoClick(department.id)"
+  (mouseover)="onTodoOver(department.id)"
+  (mouseout)="onTodoOut(department.id)"
 
   class="deparment"
   *ngFor="let department of departments">

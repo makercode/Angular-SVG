@@ -20,8 +20,13 @@ path {
   stroke-opacity:1
 }
 path.selected {
-  fill: #333333;
+  fill: #ff0000;
 }
+path.overed {
+  fill: #660000;
+}
+/*
 path:hover {
   fill:#666666;
 }
+*/

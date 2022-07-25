@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DepartmentService } from 'src/app/business/department/services/department.service';
+import { DivisionServiceInterface } from 'src/app/business/division/interfaces/services/division.service.interface';
 import { DepartmentInterface } from '../../business/department/interfaces/department.interface';
-import { DepartmentService } from '../../business/department/services/department.service';
 
 @Component({
   selector: 'app-todoist',
@@ -9,21 +10,12 @@ import { DepartmentService } from '../../business/department/services/department
 })
 export class TodoistComponent implements OnInit {
 
-  departments: DepartmentInterface[];
+  departments!: DepartmentInterface[];
 
-  constructor( private departmentService: DepartmentService ) {
-
-    this.departments = [
-      {
-        id: "",
-        title: "",
-        transform: "",
-        data: "",
-        selected: false
-      }
-    ];
-
+  constructor( public departmentService: DepartmentService ) {
   }
+
+  @Input() divisionService!: DivisionServiceInterface;
 
   ngOnInit(): (void) {
 
@@ -34,7 +26,7 @@ export class TodoistComponent implements OnInit {
   observeDepartments(): (void)  {
 
     console.log('observeDepartments!');
-    this.departmentService.getDepartments().subscribe(
+    this.divisionService.getDepartments().subscribe(
       ( resultDepartments:DepartmentInterface[] ) => {
         this.departments = resultDepartments;
         console.log( resultDepartments );
@@ -43,10 +35,24 @@ export class TodoistComponent implements OnInit {
 
   }
 
-  onItemClick( departmentId:string ): (void)  {
+  onTodoClick( departmentId:string ): (void)  {
 
     console.log('onPathClick!');
-    this.departmentService.toggleSelectedDepartment(departmentId);
+    this.divisionService.toggleSelectedDepartment(departmentId);
+
+  }
+
+  onTodoOver( departmentId:string ): (void)  {
+
+    // console.log('onPathOver!');
+    this.divisionService.activeOveredDepartment(departmentId);
+
+  }
+
+  onTodoOut( departmentId:string ): (void)  {
+
+    // console.log('onPathOut!');
+    this.divisionService.inactiveOveredDepartment(departmentId);
 
   }
 
