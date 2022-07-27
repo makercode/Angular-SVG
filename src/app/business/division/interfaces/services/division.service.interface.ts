@@ -3,6 +3,7 @@ import { DepartmentInterface } from "src/app/business/department/interfaces/depa
 
 export interface DivisionServiceInterface {
   getDepartments(): Subject<DepartmentInterface[]>;
+  setDepartments( departments: DepartmentInterface[] ): Subject<DepartmentInterface[]>;
   toggleSelectedDepartment(departmentId:string): Subject<DepartmentInterface[]>;
   activeOveredDepartment(departmentId:string): Subject<DepartmentInterface[]>;
   inactiveOveredDepartment(departmentId:string): Subject<DepartmentInterface[]>;

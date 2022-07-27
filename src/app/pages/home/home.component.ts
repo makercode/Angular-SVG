@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
 
 import { DepartmentService } from '../../business/department/services/department.service';
+import departmentsJson from 'src/app/business/department/assets/jsons/department.data.json';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +12,7 @@ import { DepartmentService } from '../../business/department/services/department
 export class HomeComponent implements OnInit {
 
   constructor( public departmentService: DepartmentService ) {
+    this.departmentService.setDepartments(departmentsJson);
   }
 
   ngOnInit(): void {

@@ -11,18 +11,18 @@ import { Observer, Subject, BehaviorSubject  } from "rxjs";
 })
 export class DepartmentService {
 
-  private departments: DepartmentInterface[] = departmentsJson;
+  private departments: DepartmentInterface[] = [{} as DepartmentInterface];
+  public departmentObserver: Subject<DepartmentInterface[]> = new BehaviorSubject( this.departments );
 
   private departmentIsSelectedValue: boolean = false;
   private departmentIndex: number = 0;
-  public departmentObserver: Subject<DepartmentInterface[]> = new BehaviorSubject( this.departments );
 
   constructor( private departmentHelper: DepartmentHelper ) {
   }
 
   getDepartments(): Subject<DepartmentInterface[]> {
 
-    console.log("getSuscribeDepartments");
+    console.log("getDepartments");
     this.departmentObserver.subscribe({
       next( departments ) {
         return departments;
@@ -32,6 +32,13 @@ export class DepartmentService {
     this.departmentObserver.next(this.departments);
     return this.departmentObserver;
 
+  }
+
+  setDepartments( departmentsJson:DepartmentInterface[] ): Subject<DepartmentInterface[]> {
+    console.log("setDepartments");
+    this.departments = departmentsJson;
+    this.departmentObserver.next(this.departments);
+    return this.departmentObserver;
   }
 
   toggleSelectedDepartment( departmentId:string ): Subject<DepartmentInterface[]> {
