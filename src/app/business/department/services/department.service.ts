@@ -12,7 +12,7 @@ import { Observer, Subject, BehaviorSubject  } from "rxjs";
 export class DepartmentService {
 
   private departments: DepartmentInterface[] = [{} as DepartmentInterface];
-  public departmentObserver: Subject<DepartmentInterface[]> = new BehaviorSubject( this.departments );
+  private departmentObserver: Subject<DepartmentInterface[]> = new BehaviorSubject( this.departments );
 
   private departmentIsSelectedValue: boolean = false;
   private departmentIndex: number = 0;
