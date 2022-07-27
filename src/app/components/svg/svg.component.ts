@@ -12,6 +12,7 @@ import * as d3 from 'd3';
 })
 
 export class SvgComponent implements OnInit {
+
   overlabel: string = "division";
   departments!: DepartmentInterface[];
 

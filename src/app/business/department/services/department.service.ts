@@ -35,10 +35,12 @@ export class DepartmentService {
   }
 
   setDepartments( departmentsJson:DepartmentInterface[] ): Subject<DepartmentInterface[]> {
+
     console.log("setDepartments");
     this.departments = departmentsJson;
     this.departmentObserver.next(this.departments);
     return this.departmentObserver;
+
   }
 
   toggleSelectedDepartment( departmentId:string ): Subject<DepartmentInterface[]> {
