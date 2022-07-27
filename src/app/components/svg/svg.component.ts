@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DepartmentInterface } from '../../business/department/interfaces/department.interface';
 
+import { DivisionInterface } from '../../business/division/interfaces/division.interface';
 import { DivisionServiceInterface } from 'src/app/business/division/interfaces/services/division.service.interface';
 
 import * as d3 from 'd3';
@@ -14,7 +14,7 @@ import * as d3 from 'd3';
 export class SvgComponent implements OnInit {
 
   overlabel: string = "division";
-  departments!: DepartmentInterface[];
+  divisions!: DivisionInterface[];
 
   mouseX: number= 0;
   mouseY: number= 0;
@@ -27,35 +27,35 @@ export class SvgComponent implements OnInit {
 
   ngOnInit(): (void) {
 
-    this.observeDepartments();
+    this.observeDivisions();
 
   }
 
-  observeDepartments(): (void)  {
+  observeDivisions(): (void)  {
 
-    // console.log('observeDepartments!');
-    this.divisionService.getDepartments().subscribe(
-      ( resultDepartments:DepartmentInterface[] ) => {
-        this.departments = resultDepartments;
-        console.log( resultDepartments );
+    // console.log('observeDivisions!');
+    this.divisionService.getDivisions().subscribe(
+      ( resultDeivisions:DivisionInterface[] ) => {
+        this.divisions = resultDeivisions;
+        console.log( resultDeivisions );
       }
     )
 
   }
 
-  onPathOver( title:string,departmentId:string ): (void)  {
+  onPathOver( title:string,divisionId:string ): (void)  {
 
     // console.log('onPathOver!');
     this.overlabel = title;
-    this.divisionService.activeOveredDepartment(departmentId);
+    this.divisionService.activeOveredDivision(divisionId);
 
   }
 
-  onPathOut( departmentId:string ): (void)  {
+  onPathOut( divisionId:string ): (void)  {
 
     // console.log('onPathOut!');
     d3.select('.tooltip').style('left','-300px');
-    this.divisionService.inactiveOveredDepartment(departmentId);
+    this.divisionService.inactiveOveredDivision(divisionId);
 
   }
 
@@ -68,10 +68,10 @@ export class SvgComponent implements OnInit {
 
   }
 
-  onPathClick( departmentId:string ): (void)  {
+  onPathClick( divisionId:string ): (void)  {
 
     // console.log('onPathClick!');
-    this.divisionService.toggleSelectedDepartment(departmentId);
+    this.divisionService.toggleSelectedDivision(divisionId);
 
   }
 

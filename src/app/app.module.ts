@@ -13,7 +13,8 @@ import { TodoistComponent } from './components/todoist/todoist.component';
 import { TodoComponent } from './components/todoist/components/todo/todo.component'
 
 // Services
-import { DepartmentService } from './business/department/services/department.service';
+import { PeruDepartmentService } from './business/department/services/department.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,7 @@ import { DepartmentService } from './business/department/services/department.ser
     AppRoutingModule
   ],
   providers: [
-    DepartmentService
+    PeruDepartmentService
   ],
   bootstrap: [
     AppComponent

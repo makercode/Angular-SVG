@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DepartmentService } from 'src/app/business/department/services/department.service';
+
 import { DivisionServiceInterface } from 'src/app/business/division/interfaces/services/division.service.interface';
-import { DepartmentInterface } from '../../business/department/interfaces/department.interface';
+import { DivisionInterface } from '../../business/division/interfaces/division.interface';
 
 @Component({
   selector: 'app-todoist',
@@ -10,49 +10,49 @@ import { DepartmentInterface } from '../../business/department/interfaces/depart
 })
 export class TodoistComponent implements OnInit {
 
-  departments!: DepartmentInterface[];
+  divisions!: DivisionInterface[];
 
-  constructor( public departmentService: DepartmentService ) {
+  constructor() {
   }
 
   @Input() divisionService!: DivisionServiceInterface;
 
   ngOnInit(): (void) {
 
-    this.observeDepartments();
+    this.observeDivisions();
 
   }
 
-  observeDepartments(): (void)  {
+  observeDivisions(): (void)  {
 
-    console.log('observeDepartments!');
-    this.divisionService.getDepartments().subscribe(
-      ( resultDepartments:DepartmentInterface[] ) => {
-        this.departments = resultDepartments;
-        console.log( resultDepartments );
+    console.log('observeDivisions!');
+    this.divisionService.getDivisions().subscribe(
+      ( resultDivisions:DivisionInterface[] ) => {
+        this.divisions = resultDivisions;
+        console.log( resultDivisions );
       }
     )
 
   }
 
-  onTodoClick( departmentId:string ): (void)  {
+  onTodoClick( divisionId:string ): (void)  {
 
     console.log('onPathClick!');
-    this.divisionService.toggleSelectedDepartment(departmentId);
+    this.divisionService.toggleSelectedDivision(divisionId);
 
   }
 
-  onTodoOver( departmentId:string ): (void)  {
+  onTodoOver( divisionId:string ): (void)  {
 
     // console.log('onPathOver!');
-    this.divisionService.activeOveredDepartment(departmentId);
+    this.divisionService.activeOveredDivision(divisionId);
 
   }
 
-  onTodoOut( departmentId:string ): (void)  {
+  onTodoOut( divisionId:string ): (void)  {
 
     // console.log('onPathOut!');
-    this.divisionService.inactiveOveredDepartment(departmentId);
+    this.divisionService.inactiveOveredDivision(divisionId);
 
   }
 

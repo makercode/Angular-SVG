@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 
-import { DepartmentHelper } from './../helpers/department.helper';
+import { DivisionHelper } from '../../division/helpers/division.helper';
 import { DepartmentInterface } from '../interfaces/department.interface';
-import departmentsJson from '../assets/jsons/department.data.json';
+import peruDepartmentsJson from '../assets/jsons/peru.department.data.json';
 
-import { Observer, Subject, BehaviorSubject  } from "rxjs";
+import { Subject, BehaviorSubject  } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class DepartmentService {
+export class PeruDepartmentService {
 
-  private departments: DepartmentInterface[] = [{} as DepartmentInterface];
+  private departments: DepartmentInterface[] = peruDepartmentsJson;
   private departmentObserver: Subject<DepartmentInterface[]> = new BehaviorSubject( this.departments );
 
   private departmentIsSelectedValue: boolean = false;
   private departmentIndex: number = 0;
 
-  constructor( private departmentHelper: DepartmentHelper ) {
+  constructor( private divisionHelper: DivisionHelper ) {
   }
 
-  getDepartments(): Subject<DepartmentInterface[]> {
+  getDivisions(): Subject<DepartmentInterface[]> {
 
-    console.log("getDepartments");
+    console.log("getSuscribeDepartments");
     this.departmentObserver.subscribe({
       next( departments ) {
         return departments;
@@ -34,19 +34,10 @@ export class DepartmentService {
 
   }
 
-  setDepartments( departmentsJson:DepartmentInterface[] ): Subject<DepartmentInterface[]> {
-
-    console.log("setDepartments");
-    this.departments = departmentsJson;
-    this.departmentObserver.next(this.departments);
-    return this.departmentObserver;
-
-  }
-
-  toggleSelectedDepartment( departmentId:string ): Subject<DepartmentInterface[]> {
+  toggleSelectedDivision( departmentId:string ): Subject<DepartmentInterface[]> {
 
     console.log("toggleSelectedDepartment");
-    let dhelper = this.departmentHelper;
+    let dhelper = this.divisionHelper;
 
     this.departmentIsSelectedValue  = dhelper.getDepartmentIsSelectedValue( this.departments, departmentId);
     this.departmentIndex            = dhelper.getDepartmentIndexById( this.departments, departmentId);
@@ -57,25 +48,25 @@ export class DepartmentService {
 
   }
 
-  activeOveredDepartment( departmentId:string ): Subject<DepartmentInterface[]> {
+  activeOveredDivision( departmentId:string ): Subject<DepartmentInterface[]> {
 
     console.log("activeOveredDepartment");
-    let dhelper = this.departmentHelper;
+    let dhelper = this.divisionHelper;
 
-    this.departmentIndex            = dhelper.getDepartmentIndexById( this.departments, departmentId);
-    this.departments[this.departmentIndex].overed  = true;
+    this.departmentIndex                             = dhelper.getDepartmentIndexById( this.departments, departmentId);
+    this.departments[this.departmentIndex].overed    = true;
     this.departmentObserver.next(this.departments);
 
     return this.departmentObserver;
   }
 
-  inactiveOveredDepartment( departmentId:string ): Subject<DepartmentInterface[]> {
+  inactiveOveredDivision( departmentId:string ): Subject<DepartmentInterface[]> {
 
     console.log("inactiveOveredDepartment");
-    let dhelper = this.departmentHelper;
+    let dhelper = this.divisionHelper;
 
-    this.departmentIndex            = dhelper.getDepartmentIndexById( this.departments, departmentId);
-    this.departments[this.departmentIndex].overed  = false;
+    this.departmentIndex                             = dhelper.getDepartmentIndexById( this.departments, departmentId);
+    this.departments[this.departmentIndex].overed    = false;
     this.departmentObserver.next(this.departments);
 
     return this.departmentObserver;

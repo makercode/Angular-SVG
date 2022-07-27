@@ -1,12 +1,11 @@
 import { Subject } from "rxjs";
-import { DepartmentInterface } from "src/app/business/department/interfaces/department.interface";
+import { DivisionInterface } from "src/app/business/division/interfaces/division.interface";
 
 export interface DivisionServiceInterface {
 
-  getDepartments(): Subject<DepartmentInterface[]>;
-  setDepartments( departments: DepartmentInterface[] ): Subject<DepartmentInterface[]>;
-  toggleSelectedDepartment(departmentId:string): Subject<DepartmentInterface[]>;
-  activeOveredDepartment(departmentId:string): Subject<DepartmentInterface[]>;
-  inactiveOveredDepartment(departmentId:string): Subject<DepartmentInterface[]>;
+  getDivisions(): Subject<DivisionInterface[]>;
+  toggleSelectedDivision(divisionId:string): Subject<DivisionInterface[]>;
+  activeOveredDivision(divisionId:string): Subject<DivisionInterface[]>;
+  inactiveOveredDivision(divisionId:string): Subject<DivisionInterface[]>;
 
 }
