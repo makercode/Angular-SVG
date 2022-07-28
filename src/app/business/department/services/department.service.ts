@@ -58,6 +58,7 @@ export class PeruDepartmentService {
     this.departmentObserver.next(this.departments);
 
     return this.departmentObserver;
+
   }
 
   inactiveOveredDivision( departmentId:string ): Subject<DepartmentInterface[]> {
@@ -70,6 +71,7 @@ export class PeruDepartmentService {
     this.departmentObserver.next(this.departments);
 
     return this.departmentObserver;
+
   }
 
 }
