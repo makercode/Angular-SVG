@@ -12,10 +12,12 @@ import { PathComponent } from './components/svg/components/path/path.component';
 import { TodoistComponent } from './components/todoist/todoist.component';
 import { TodoComponent } from './components/todoist/components/todo/todo.component'
 
+// Dependant components
+import { CountryComponent } from './views/country/country.component';
+import { PeruComponent } from './views/country/components/peru/peru.component';
+
 // Services
 import { PeruDepartmentService } from './business/department/services/department.service';
-import { CountryComponent } from './views/country/country.component';
-import { PeruComponent } from './views/country/peru/peru.component';
 
 @NgModule({
   declarations: [
