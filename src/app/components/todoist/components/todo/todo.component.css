@@ -1,11 +1,11 @@
-.todo-department {
+.todo-division {
   color: #111;
 }
-.todo-department.selected {
+.todo-division.selected {
   background: #ff0000;
   color: #fff;
 }
-.todo-department.overed {
+.todo-division.overed {
   background: #660000;
   color: #fff;
 }

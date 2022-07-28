@@ -9,27 +9,27 @@ version="1.1">
   </defs>
   <g transform="matrix(1.3333333,0,0,-1.3333333,0,600)" id="peru">
     <g id="g12">
-      <g clip-path="url(#clipPath18)" id="departments">
+      <g clip-path="url(#clipPath18)" class="g-divisions">
         <svg:g
-          [attr.transform]="department.transform"
-          [id]="department.id"
+          [attr.transform]="division.transform"
+          [id]="division.id"
 
-          (click)="onPathClick(department.id)"
-          (mouseover)="onPathOver(department.title,department.id)"
+          (click)="onPathClick(division.id)"
+          (mouseover)="onPathOver(division.title,division.id)"
           (mousemove)="onPathMouseMove($event)"
-          (mouseout)="onPathOut(department.id)"
+          (mouseout)="onPathOut(division.id)"
 
           class="deparment"
 
-          *ngFor="let department of departments">
+          *ngFor="let division of divisions">
 
             <path app-path
-              [department]="department"
-              [id]="department.id"
-              [title]="department.title"
-              [class.selected]="department.selected"
-              [class.overed]="department.overed"
-              [attr.d]="department.data">
+              [division]="division"
+              [id]="division.id"
+              [title]="division.title"
+              [class.selected]="division.selected"
+              [class.overed]="division.overed"
+              [attr.d]="division.data">
             </path>
 
         </svg:g>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DepartmentInterface } from '../../../../business/department/interfaces/department.interface';
+import { DivisionInterface } from '../../../../business/division/interfaces/division.interface';
 
 @Component({
   selector: 'app-todo',
@@ -8,7 +8,7 @@ import { DepartmentInterface } from '../../../../business/department/interfaces/
 })
 export class TodoComponent implements OnInit {
 
-  @Input() department!: DepartmentInterface;
+  @Input() division!: DivisionInterface;
 
   constructor() { }
 

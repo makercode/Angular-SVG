@@ -35,9 +35,9 @@ export class SvgComponent implements OnInit {
 
     // console.log('observeDivisions!');
     this.divisionService.getDivisions().subscribe(
-      ( resultDeivisions:DivisionInterface[] ) => {
-        this.divisions = resultDeivisions;
-        console.log( resultDeivisions );
+      ( resultDivisions:DivisionInterface[] ) => {
+        this.divisions = resultDivisions;
+        console.log( resultDivisions );
       }
     )
 

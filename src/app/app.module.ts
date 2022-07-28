@@ -14,6 +14,8 @@ import { TodoComponent } from './components/todoist/components/todo/todo.compone
 
 // Services
 import { PeruDepartmentService } from './business/department/services/department.service';
+import { CountryComponent } from './views/country/country.component';
+import { PeruComponent } from './views/country/peru/peru.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PeruDepartmentService } from './business/department/services/department
     SvgComponent,
     PathComponent,
     TodoistComponent,
-    TodoComponent
+    TodoComponent,
+    CountryComponent,
+    PeruComponent
   ],
   imports: [
     BrowserModule,

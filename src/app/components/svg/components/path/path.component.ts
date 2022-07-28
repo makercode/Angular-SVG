@@ -10,7 +10,7 @@ export class PathComponent implements OnInit {
 
   constructor() { }
 
-  @Input() department!: DepartmentInterface;
+  @Input() division!: DepartmentInterface;
 
   ngOnInit(): void {
   }

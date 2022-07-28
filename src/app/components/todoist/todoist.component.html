@@ -1,16 +1,16 @@
 <ul>
 
   <li
-  [attr.transform]="department.transform"
-  [id]="department.id"
-  (click)="onTodoClick(department.id)"
-  (mouseover)="onTodoOver(department.id)"
-  (mouseout)="onTodoOut(department.id)"
+  [attr.transform]="division.transform"
+  [id]="division.id"
+  (click)="onTodoClick(division.id)"
+  (mouseover)="onTodoOver(division.id)"
+  (mouseout)="onTodoOut(division.id)"
 
-  class="deparment"
-  *ngFor="let department of departments">
+  class="division"
+  *ngFor="let division of divisions">
 
-    <app-todo [department]="department">
+    <app-todo [division]="division">
     </app-todo>
 
   </li>
