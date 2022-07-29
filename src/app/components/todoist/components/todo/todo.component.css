@@ -1,8 +1,10 @@
 .todo-division {
+  display: inline-block;
+  padding: 6px;
   color: #111;
 }
 .todo-division.overed {
-  background: #956b6b;
+  background: #7b1fa2;
   color: #fff;
 }
 .todo-division.selected {
