@@ -18,6 +18,7 @@ import { PeruComponent } from './views/country/components/peru/peru.component';
 
 // Services
 import { PeruDepartmentService } from './business/department/services/peru/perudepartment.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PeruDepartmentService } from './business/department/services/peru/perud
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     PeruDepartmentService
