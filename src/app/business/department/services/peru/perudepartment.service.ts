@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { DivisionHelper } from '../../../division/helpers/division.helper';
 import { DepartmentInterface } from '../../interfaces/department.interface';
-import peruDepartmentsJson from '../assets/jsons/peru.department.data.json';
+import peruDepartmentsJson from '../../assets/jsons/peru.department.data.json';
 
 import { Subject, BehaviorSubject  } from "rxjs";
 
