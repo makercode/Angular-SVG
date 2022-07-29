@@ -1,8 +1,31 @@
-<ul>
-  <li>
-    <a href="#">
-      Peru
-    </a>
-  </li>
-</ul>
-<app-country></app-country>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>
+      Todo traveler
+    </h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/'"> Peru </a>
+
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+
+      <a mat-list-item [routerLink]="'/'"> Peru </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <app-country></app-country>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

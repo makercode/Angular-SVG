@@ -18,6 +18,14 @@ import { PeruComponent } from './views/country/components/peru/peru.component';
 
 // Services
 import { PeruDepartmentService } from './business/department/services/peru/perudepartment.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Material design
+import { MatToolbarModule } from  '@angular/material/toolbar';
+import { MatIconModule } from  '@angular/material/icon';
+import { MatSidenavModule } from  '@angular/material/sidenav';
+import { MatListModule } from  '@angular/material/list';
+import { MatButtonModule } from  '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,14 @@ import { PeruDepartmentService } from './business/department/services/peru/perud
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    /* Material design */
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     PeruDepartmentService
