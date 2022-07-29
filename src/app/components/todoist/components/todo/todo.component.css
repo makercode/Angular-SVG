@@ -3,6 +3,10 @@
   padding: 6px;
   color: #111;
 }
+.todo-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
 .todo-division.overed {
   background: #7b1fa2;
   color: #fff;
