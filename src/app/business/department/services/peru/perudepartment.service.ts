@@ -24,7 +24,7 @@ export class PeruDepartmentService {
 
     console.log("getSuscribeDepartments");
     this.departmentObserver.subscribe({
-      next( departments ) {
+      next( departments: DepartmentInterface[] ) {
         return departments;
       },
       complete() { console.log('Finished sequence'); }
