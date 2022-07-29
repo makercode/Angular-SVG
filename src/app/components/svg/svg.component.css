@@ -1,3 +1,6 @@
+svg {
+  max-width: 100%;
+}
 .tooltip {
   font-family: "sans-serif";
   font-size: 20px;
