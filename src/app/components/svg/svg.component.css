@@ -19,14 +19,9 @@ path {
   stroke-dasharray:none;
   stroke-opacity:1
 }
-path.selected {
-  fill: #ff0000;
-}
 path.overed {
-  fill: #660000;
+  fill: #956b6b;
 }
-/*
-path:hover {
-  fill:#666666;
+path.selected {
+  fill: #71b966;
 }
-*/
