@@ -18,6 +18,7 @@ import { PeruComponent } from './views/country/components/peru/peru.component';
 
 // Services
 import { PeruDepartmentService } from './business/department/services/peru/perudepartment.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Material design
 import { MatToolbarModule } from  '@angular/material/toolbar';
