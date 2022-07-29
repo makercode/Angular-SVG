@@ -1,4 +1,4 @@
-.todo-division {
+.todo-content {
   display: inline-block;
   padding: 6px;
   color: #111;
@@ -7,11 +7,11 @@
   display: inline-block;
   vertical-align: middle;
 }
-.todo-division.overed {
+.todo-content.overed {
   background: #7b1fa2;
   color: #fff;
 }
-.todo-division.selected {
+.todo-content.selected {
   background: #71b966;
   color: #fff;
 }

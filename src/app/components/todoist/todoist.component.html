@@ -1,4 +1,4 @@
-<ul>
+<ul class="todo-list">
 
   <li
   [attr.transform]="division.transform"
@@ -7,7 +7,7 @@
   (mouseover)="onTodoOver(division.id)"
   (mouseout)="onTodoOut(division.id)"
 
-  class="division"
+  class="todo-item"
   *ngFor="let division of divisions">
 
     <app-todo [division]="division">
