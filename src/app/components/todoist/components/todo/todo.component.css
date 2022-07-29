@@ -2,6 +2,7 @@
   display: inline-block;
   padding: 6px;
   color: #111;
+  text-decoration: none;
 }
 .todo-icon {
   display: inline-block;
