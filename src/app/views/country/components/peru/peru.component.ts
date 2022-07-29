@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PeruDepartmentService } from '../../../../business/department/services/department.service';
+import { PeruDepartmentService } from '../../../../business/department/services/peru/perudepartment.service';
 
 @Component({
   selector: 'app-peru',

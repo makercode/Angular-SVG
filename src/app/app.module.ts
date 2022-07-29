@@ -17,7 +17,7 @@ import { CountryComponent } from './views/country/country.component';
 import { PeruComponent } from './views/country/components/peru/peru.component';
 
 // Services
-import { PeruDepartmentService } from './business/department/services/department.service';
+import { PeruDepartmentService } from './business/department/services/peru/perudepartment.service';
 
 @NgModule({
   declarations: [
