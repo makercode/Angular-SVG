@@ -1,9 +1,10 @@
 # Angular-SVG
 CLEAN CODE **Angular** **SVG** with **D3**, **MATERIAL DESIGN** and **RXJS** example in Peru map.
 
-Install:
+Installing:
 - npm install
-Running
+
+Running:
 - ng serve
 
 Tecnologies:
