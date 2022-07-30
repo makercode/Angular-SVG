@@ -8,9 +8,11 @@
   display: inline-block;
   vertical-align: middle;
 }
-.todo-content.overed {
-  background: #7b1fa2;
-  color: #fff;
+@media screen and (min-width: 600px) {
+  .todo-content.overed {
+    background: #7b1fa2;
+    color: #fff;
+  }
 }
 .todo-content.selected {
   background: #71b966;

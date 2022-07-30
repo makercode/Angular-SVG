@@ -24,8 +24,10 @@ path {
   stroke-dasharray:none;
   stroke-opacity:1
 }
-path.overed {
-  fill: #7b1fa2;
+@media screen and (min-width: 600px) {
+  path.overed {
+    fill: #7b1fa2;
+  }
 }
 path.selected {
   fill: #71b966;
