@@ -1,5 +1,8 @@
 app-svg {
   max-width: 100%;
+  margin: 5%;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-style: dashed;
 }
 @media screen and (min-width: 600px) {
   app-svg {
