@@ -1,0 +1,8 @@
+app-svg {
+  max-width: 100%;
+}
+@media screen and (min-width: 600px) {
+  app-svg {
+    min-width: 420px;
+  }
+}

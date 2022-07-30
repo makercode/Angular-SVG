@@ -1,0 +1,12 @@
+app-peru {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  app-peru {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+}
