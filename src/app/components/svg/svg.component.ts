@@ -3,6 +3,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DivisionInterface } from '../../business/division/interfaces/division.interface';
 import { DivisionServiceInterface } from 'src/app/business/division/interfaces/services/division.service.interface';
 
+import { ConfigHelper } from './helpers/config.helper';
+
 import * as d3 from 'd3';
 
 @Component({
@@ -19,7 +21,7 @@ export class SvgComponent implements OnInit {
   mouseX: number= 0;
   mouseY: number= 0;
 
-  constructor() {
+  constructor( public configHelper: ConfigHelper ) {
   }
 
   @Input() divisionService!: DivisionServiceInterface;
@@ -28,6 +30,7 @@ export class SvgComponent implements OnInit {
   ngOnInit(): (void) {
 
     this.observeDivisions();
+    this.startSvgConfig();
 
   }
 
@@ -40,6 +43,15 @@ export class SvgComponent implements OnInit {
         console.log( resultDivisions );
       }
     )
+
+  }
+
+  startSvgConfig(): void {
+
+    // console.log('startSvgConfig!');
+    let d3svg = d3.select('svg');
+    let d3transformableGroup = d3.select('svg g.transformable');
+    this.configHelper.dragable( d3svg, d3transformableGroup );
 
   }
 

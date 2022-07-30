@@ -1,5 +1,7 @@
 svg {
   max-width: 100%;
+  max-height: 70vh;
+  margin: auto;
 }
 .tooltip {
   font-family: "sans-serif";

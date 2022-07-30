@@ -1,27 +1,28 @@
 <svg viewBox="0 0 400 600" height="600" width="400" id="svg">
-  <g transform="matrix(1.3333333,0,0,-1.3333333,0,600)" id="peru">
-
-    <path app-path
-      [division]="division"
-      [id]="division.id"
-      [title]="division.title"
-      [class.selected]="division.selected"
-      [class.overed]="division.overed"
-
-      [attr.d]="division.data"
-      [attr.transform]="division.transform"
-      [id]="division.id"
-
-      (click)="onPathClick(division.id)"
-      (mouseover)="onPathOver(division.title,division.id)"
-      (mousemove)="onPathMouseMove($event)"
-      (mouseout)="onPathOut(division.id)"
-
-      class="deparment"
-
-      *ngFor="let division of divisions">
-    </path>
-
+  <g class="transformable">
+    <g transform="matrix(1.3333333,0,0,-1.3333333,0,600)" id="peru">
+      <path app-path
+        [division]="division"
+        [id]="division.id"
+        [title]="division.title"
+        [class.selected]="division.selected"
+        [class.overed]="division.overed"
+  
+        [attr.d]="division.data"
+        [attr.transform]="division.transform"
+        [id]="division.id"
+  
+        (click)="onPathClick(division.id)"
+        (mouseover)="onPathOver(division.title,division.id)"
+        (mousemove)="onPathMouseMove($event)"
+        (mouseout)="onPathOut(division.id)"
+  
+        class="deparment"
+  
+        *ngFor="let division of divisions">
+      </path>
+  
+    </g>
   </g>
 </svg>
 <div class="tooltip"> {{overlabel}} </div>
