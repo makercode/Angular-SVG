@@ -1,7 +1,12 @@
 .todo-content {
   display: inline-block;
+<<<<<<< Updated upstream
   padding: 6px;
   color: #111;
+=======
+  padding: 4px 6px;
+  color: #fff;
+>>>>>>> Stashed changes
   text-decoration: none;
 }
 .todo-icon {
