@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PeruDepartmentService } from './peru-department.service';
+import { PeruDepartmentService } from './perudepartment.service';
 
 describe('DistrictListService', () => {
   let service: PeruDepartmentService;
